@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:todo_solve_list/app/screens/main/main_screen.dart';
+import 'package:todo_solve_list/screens/main/main_screen.dart';
 
 class TodoSolveList extends StatelessWidget {
   const TodoSolveList({super.key});
