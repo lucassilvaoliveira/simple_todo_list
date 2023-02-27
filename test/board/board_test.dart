@@ -11,7 +11,11 @@ void main() {
         CreateNewBoardUseCase(iBoardRepository: BoardMemoryRepositoryImpl());
 
     final sut = await createNewBoardUseCase.execute(
-      board: Board(id: "1", boardName: "boardName", cardsList: []),
+      board: Board(
+          id: "1",
+          boardName: "boardName",
+          cardsList: [],
+          createdAt: DateTime.now()),
     );
 
     expect(sut, messageWhenBoardCreated);

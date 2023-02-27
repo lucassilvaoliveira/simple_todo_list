@@ -4,6 +4,12 @@ class Board {
   String? id;
   String? boardName;
   List<CardsList>? cardsList;
+  DateTime? createdAt;
 
-  Board({required this.id, required this.boardName, required this.cardsList});
+  Board({
+    required this.id,
+    required this.boardName,
+    required this.cardsList,
+    required this.createdAt,
+  });
 }
