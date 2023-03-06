@@ -74,6 +74,7 @@ class _WelcomeViewState extends State<WelcomeView> {
                     child: DefaultButton(
                       size: size,
                       text: "Continue",
+                      fontSize: 18,
                       press: () {
                         widget.welcomeController.nextPage(context: context);
                       },

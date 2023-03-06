@@ -1,5 +1,4 @@
 import 'package:flutter/cupertino.dart';
-import 'package:flutter/material.dart';
 import 'package:todo_solve_list/screens/main/main_screen.dart';
 
 class WelcomeController extends ChangeNotifier {
@@ -14,7 +13,7 @@ class WelcomeController extends ChangeNotifier {
     {
       "title": "O app",
       "subTitle":
-          "Desenvolvi o app aplicando alguns conhecimentos \n(Tdd, Clean architeture, SOLID)e também uma arquitetura para views que eu desenvolvi!",
+          "Desenvolvi o app aplicando alguns conhecimentos \n(Tdd, Clean architeture, SOLID) e também uma arquitetura para views que eu desenvolvi!",
       "assetImage": "assets/programmer.svg"
     },
     {

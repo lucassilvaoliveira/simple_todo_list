@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 class DefaultButton extends StatelessWidget {
   final Size size;
   final String text;
+  final double fontSize;
   final Function() press;
   final double height;
   final double width;
@@ -12,6 +13,7 @@ class DefaultButton extends StatelessWidget {
     super.key,
     required this.size,
     required this.text,
+    required this.fontSize,
     required this.press,
     required this.height,
     required this.width,
@@ -32,9 +34,10 @@ class DefaultButton extends StatelessWidget {
         child: Center(
           child: Text(
             text,
-            style: const TextStyle(
+            textAlign: TextAlign.center,
+            style: TextStyle(
               color: Colors.white,
-              fontSize: 18,
+              fontSize: fontSize,
             ),
           ),
         ),
