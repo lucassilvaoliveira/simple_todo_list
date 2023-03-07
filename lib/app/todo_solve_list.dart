@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:todo_solve_list/screens/main/main_screen.dart';
 import 'package:todo_solve_list/screens/welcome/welcome_screen.dart';
 
 class TodoSolveList extends StatelessWidget {
@@ -13,7 +12,7 @@ class TodoSolveList extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: const MainScreen(),
+      home: const WelcomeScreen(),
     );
   }
 }

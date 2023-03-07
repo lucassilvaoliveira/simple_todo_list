@@ -1,8 +1,8 @@
 import 'package:boardview/board_item.dart';
 import 'package:boardview/board_list.dart';
 import 'package:boardview/boardview_controller.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:todo_solve_list/screens/main/model/board_item_object.dart';
 import 'package:todo_solve_list/screens/main/model/board_list_object.dart';
 
@@ -44,8 +44,7 @@ class MainController extends ChangeNotifier {
     );
   }
 
-  Widget createBoardList(
-      {required BoardListObject list, required BuildContext context}) {
+  Widget createBoardList({required BoardListObject list}) {
     List<BoardItem> items = [];
     for (int i = 0; i < list.items!.length; i++) {
       items.insert(i, buildBoardItem(list.items![i]) as BoardItem);
@@ -55,58 +54,10 @@ class MainController extends ChangeNotifier {
       onStartDragList: (int? listIndex) {},
       onTapList: (int? listIndex) async {},
       onDropList: (int? listIndex, int? oldListIndex) {
-        //Update our local list data
         var list = listData[oldListIndex!];
         listData.removeAt(oldListIndex);
         listData.insert(listIndex!, list);
       },
-      footer: GestureDetector(
-        onTap: () => showCupertinoModalPopup(
-          context: context,
-          builder: (context) => CupertinoAlertDialog(
-            title: const Text("New card"),
-            content: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                const Text("Card title"),
-                CupertinoTextField(
-                  controller: newCardTitleController,
-                ),
-              ],
-            ),
-            actions: [
-              CupertinoDialogAction(
-                onPressed: () => Navigator.pop(context),
-                child: const Text(
-                  "Close",
-                  style: TextStyle(color: Colors.red),
-                ),
-              ),
-              CupertinoDialogAction(
-                onPressed: () {
-                  listData.first.items!.add(
-                    BoardItemObject(
-                      title: newCardTitleController.text,
-                    ),
-                  );
-                  Navigator.pop(context, false);
-                  newCardTitleController.clear();
-                },
-                child: const Text(
-                  "Create",
-                  style: TextStyle(color: Colors.blue),
-                ),
-              ),
-            ],
-          ),
-        ),
-        child: Row(
-          children: const [
-            Icon(CupertinoIcons.add),
-            Text("Add new card"),
-          ],
-        ),
-      ),
       headerBackgroundColor: const Color.fromARGB(255, 235, 236, 240),
       backgroundColor: const Color.fromARGB(255, 235, 236, 240),
       header: [
